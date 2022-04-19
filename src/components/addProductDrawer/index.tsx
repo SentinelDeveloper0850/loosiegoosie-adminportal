@@ -21,13 +21,28 @@ const AddProductDrawer = ({
   });
 
   const handleSave = async () => {
-    await axios.post(`${BASE_URL}/api/product`, product).then((response) => {
+    console.log('product', product);
+
+    let formData = new FormData();
+
+    const keys = Object.keys(product);
+
+    keys.forEach((key: string, index: number) => {
+      formData.append(key, product[key]);
+    });
+
+    await axios.post(`${BASE_URL}/api/product`, formData).then((response) => {
       updateList(response.data.product);
     });
   };
 
   const handleInputChange = (key: string, value: any, parent?: string) => {
     let updatedChild = { ...product, [key]: value };
+    setProduct(updatedChild);
+  };
+
+  const handleFileChange = (key: string, event: any) => {
+    let updatedChild = { ...product, [key]: event.target.files[0] };
     setProduct(updatedChild);
   };
 
@@ -129,6 +144,13 @@ const AddProductDrawer = ({
                   <Option key={item}>{item}</Option>;
                 })}
               </Select>
+            </FormItem>
+          </Col>
+        </Row>
+        <Row gutter={12}>
+          <Col span={24}>
+            <FormItem label='Image'>
+              <Input type='file' name='productImage' onChange={(e: any) => handleFileChange('productImage', e)} />
             </FormItem>
           </Col>
         </Row>
