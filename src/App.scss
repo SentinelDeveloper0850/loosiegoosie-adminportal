@@ -1,0 +1,87 @@
+@import '~antd/dist/antd.css';
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%;
+
+  body {
+    box-sizing: border-box;
+  }
+
+  .App {
+    font-size: 1.4rem;
+
+    a,
+    a:active,
+    a:visited {
+      text-decoration: none;
+      color: unset;
+    }
+
+    .page {
+      .ant-page-header-ghost {
+        padding: 0 1rem;
+
+        .ant-page-header-heading-left {
+          display: block;
+
+          .ant-page-header-back {
+            line-height: 2;
+            float: left;
+          }
+
+          .ant-page-header-heading-title {
+            display: block;
+          }
+        }
+      }
+
+      .ant-list-item {
+        background: #ffffff;
+        border-radius: 1rem;
+        padding: 1.2rem;
+        margin-bottom: 0.75rem;
+      }
+
+      &.login-page {
+        height: 100%;
+        background-color: yellowgreen;
+
+        .heading {
+          text-transform: uppercase;
+          font-weight: 400;
+          padding: 1rem;
+          font-size: 2.4rem;
+        }
+
+        .subheading {
+          font-size: 1.8rem;
+          font-weight: 500;
+          font-style: italic;
+        }
+
+        .form-container {
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 2rem;
+          width: 30%;
+          text-align: center;
+
+          .ant-form {
+            padding: 2rem;
+            margin: 0 auto;
+            width: 70%;
+          }
+        }
+      }
+    }
+  }
+}

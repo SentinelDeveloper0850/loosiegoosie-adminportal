@@ -1,0 +1,115 @@
+@import url('../variables.scss');
+
+$primary-color: #189edb;
+$secondary-color: #fed51c;
+$dark-color: #222222;
+$accent-color: #ea4754;
+$green-color: #55ea47;
+$gray-color: #3d3d3d;
+
+.App > .ant-layout.online-layout {
+  .ant-layout-header {
+    background-color: $dark-color;
+    color: #eeeeee;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      letter-spacing: 0.3rem;
+    }
+  }
+  .ant-layout-sider {
+    height: calc(100vh - 4rem);
+    background-color: $dark-color;
+    color: #eeeeee;
+    // border-top: 0.1rem solid #313131;
+
+    nav {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        .user-account-holder {
+          padding: 2rem 1rem;
+          border-top: 0.1rem solid $gray-color;
+          border-bottom: 0.1rem solid $gray-color;
+          // display: flex;
+          // align-items: center;
+          cursor: not-allowed;
+          text-align: center;
+
+          .ant-image {
+            // left: 50%;
+            // transform: translateX(-50%);
+            margin-bottom: 2rem;
+
+            img {
+              border-radius: 50rem;
+            }
+          }
+
+          .ant-avatar {
+            background-color: $primary-color;
+            margin-right: 1rem;
+            display: block;
+          }
+
+          .user-content {
+            display: inline-block;
+
+            .username {
+              display: block;
+              text-transform: uppercase;
+              font-size: 1rem;
+              font-weight: 500;
+              letter-spacing: 0.3rem;
+            }
+
+            .status {
+              display: block;
+              font-size: 1rem;
+              font-weight: bold;
+              letter-spacing: 0.3rem;
+              text-transform: uppercase;
+              color: $primary-color;
+            }
+          }
+        }
+
+        li {
+          padding: 1rem;
+          text-transform: uppercase;
+          font-size: 1.1rem;
+          letter-spacing: 0.3rem;
+          font-weight: 500;
+
+          &.active,
+          &:hover {
+            cursor: pointer;
+            background: $secondary-color;
+
+            &.action-danger {
+              background: $accent-color;
+            }
+
+            color: $dark-color;
+          }
+        }
+      }
+    }
+  }
+  .ant-layout-content {
+    padding: 1.6rem;
+    min-height: calc(100vh - 5.6rem);
+  }
+}
