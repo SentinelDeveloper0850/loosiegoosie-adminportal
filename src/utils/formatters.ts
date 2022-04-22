@@ -25,10 +25,6 @@ export const formatToMoney = (amount: string | number, decimalCount = 2, decimal
   }
 };
 
-export const capitalizeFirstLetter = (word: string) => {
-  return word.charAt(0).toUpperCase() + word.slice(1);
-}
-
 export const formatToMoneyWithCurrency = (
   amount: string | number,
   decimalCount = 2,
@@ -42,6 +38,10 @@ export const formatToMoneyWithCurrency = (
     console.log(e);
   }
 };
+
+export const capitalizeFirstLetter = (word: string) => {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
 
 export const formatUCTtoISO = (uctDate: string) => {
   try {

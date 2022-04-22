@@ -6,6 +6,7 @@ import CategoriesPage from './pages/categories';
 import { AnimatePresence } from 'framer-motion';
 import ProductsPage from './pages/products';
 import LoginPage from './pages/login';
+import OrdersPage from './pages/orders';
 
 function App() {
   const location = useLocation();
@@ -18,7 +19,7 @@ function App() {
           <Route path='/catalogues' element={<CataloguesPage />} />
           <Route path='/categories' element={<CategoriesPage />} />
           <Route path='/products' element={<ProductsPage />} />
-          {/* <Route path='/orders' element={<ActivitiesPage />} /> */}
+          <Route path='/orders' element={<OrdersPage />} />
         </Routes>
       </AnimatePresence>
     </div>

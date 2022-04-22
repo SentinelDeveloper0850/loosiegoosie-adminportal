@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BASE_URL, MARKUP, VAT } from '../constants';
 import icon from '../assets/images/package.png';
-import { DeleteOutlined, MessageOutlined, PlusOutlined, SearchOutlined } from '@ant-design/icons';
+import { DeleteOutlined, EditOutlined, MessageOutlined, PlusOutlined, SearchOutlined } from '@ant-design/icons';
 import { useLocation, useNavigate } from 'react-router-dom';
 import moment from 'moment';
 import MainLayout from '../layouts/main.layout';
@@ -98,9 +98,9 @@ const ProductsPage = () => {
               return (
                 <List.Item
                   actions={[
-                    // <Button type='link' onClick={() => handleViewDetails(item._id)}>
-                    //   <SearchOutlined /> View
-                    // </Button>,
+                    <Button type='link' onClick={() => handleViewDetails(item._id)}>
+                      <EditOutlined /> Update
+                    </Button>,
                     <Button type='link' danger onClick={() => handleDelete(item._id)}>
                       <DeleteOutlined /> Delete
                     </Button>,
@@ -125,7 +125,14 @@ const ProductsPage = () => {
                       </>
                     }
                     style={{ alignItems: 'center' }}
-                    avatar={<Image preview={false} src={`${BASE_URL}/${item.productImage}`} width={90} style={{ padding: '1rem' }} />}
+                    avatar={
+                      <Image
+                        preview={false}
+                        src={`${BASE_URL}/${item.productImage}`}
+                        width={90}
+                        style={{ padding: '1rem' }}
+                      />
+                    }
                   />
                 </List.Item>
               );
