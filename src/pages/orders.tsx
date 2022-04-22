@@ -88,6 +88,16 @@ const OrdersPage = () => {
       dataIndex: 'created_at',
       render: (text: any) => <span>{formatUCTtoISO(text)}</span>,
     },
+    {
+      title: 'Actions',
+      render: (_value: any, _record: object, index: number) => (
+        <Space>
+          <Button type='link' danger onClick={() => handleDelete(index)}>
+            <DeleteOutlined /> Delete
+          </Button>
+        </Space>
+      ),
+    },
   ];
 
   return (

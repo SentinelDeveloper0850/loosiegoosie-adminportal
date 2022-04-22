@@ -43,7 +43,7 @@ const HomePage = () => {
                 <Statistic
                   style={{ display: 'block', width: '100%' }}
                   title='Catalogues'
-                  value={stats.numberOfClasses}
+                  value={stats.cataloguesCount}
                 />
               </Card>
             </Col>
@@ -59,7 +59,7 @@ const HomePage = () => {
                 <Statistic
                   style={{ display: 'block', width: '100%' }}
                   title='Categories'
-                  value={stats.numberOfChildren}
+                  value={stats.categoriesCount}
                 />
               </Card>
             </Col>
@@ -72,7 +72,7 @@ const HomePage = () => {
                   alignItems: 'center',
                   alignContent: 'flex-end',
                 }}>
-                <Statistic style={{ display: 'block', width: '100%' }} title='Products' value={stats.numberOfEvents} />
+                <Statistic style={{ display: 'block', width: '100%' }} title='Products' value={stats.productsCount} />
               </Card>
             </Col>
             <Col span={6}>
@@ -84,11 +84,7 @@ const HomePage = () => {
                   alignItems: 'center',
                   alignContent: 'flex-end',
                 }}>
-                <Statistic
-                  style={{ display: 'block', width: '100%' }}
-                  title='Orders'
-                  value={stats.numberOfBroadcasts}
-                />
+                <Statistic style={{ display: 'block', width: '100%' }} title='Orders' value={stats.ordersCount} />
               </Card>
             </Col>
           </Row>
