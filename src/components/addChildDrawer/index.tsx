@@ -1,7 +1,7 @@
 import { Button, Col, DatePicker, Divider, Drawer, Form, Input, Row, Select, Space } from 'antd';
 import axios from 'axios';
 import { useState } from 'react';
-import { BASE_URL, LANGUAGES } from '../../constants';
+import { BASE_URL, LANGUAGES } from '../../app-constants';
 import IAddChildDrawerProps from '../../interfaces/IAddChildDrawer';
 import './style.scss';
 

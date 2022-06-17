@@ -2,7 +2,7 @@ import { Button, Divider, List, PageHeader, Space, Table, TablePaginationConfig 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { BASE_URL, FORM_CONTROL } from '../constants';
+import { BASE_URL, FORM_CONTROL } from '../app-constants';
 import { DeleteOutlined, PlusOutlined } from '@ant-design/icons';
 import MainLayout from '../layouts/main.layout';
 import CreateModelDrawer from '../components/createModelDrawer';

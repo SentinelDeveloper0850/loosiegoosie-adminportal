@@ -2,7 +2,7 @@ import { Button, Divider, List, PageHeader, Space, Image, Table } from 'antd';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { BASE_URL, MARKUP, VAT } from '../constants';
+import { BASE_URL, MARKUP, VAT } from '../app-constants';
 import icon from '../assets/images/package.png';
 import { DeleteOutlined, EditOutlined, MessageOutlined, PlusOutlined, SearchOutlined } from '@ant-design/icons';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -74,7 +74,6 @@ const ProductsPage = () => {
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
         <div className='page products-page'>
           <PageHeader
-            onBack={() => navigate(-1)}
             title={`Products`}
             subTitle='Manage products available on the website'
             extra={

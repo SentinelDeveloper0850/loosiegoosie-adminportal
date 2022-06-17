@@ -1,7 +1,7 @@
 import { Button, Col, DatePicker, Divider, Drawer, Form, Input, InputNumber, Row, Select, Space } from 'antd';
 import axios from 'axios';
 import { useState } from 'react';
-import { BASE_URL, LANGUAGES } from '../../constants';
+import { BASE_URL, LANGUAGES } from '../../app-constants';
 import IAddProductDrawerProps from '../../interfaces/IAddProductDrawer';
 import './style.scss';
 

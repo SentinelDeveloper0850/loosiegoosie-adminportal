@@ -1,20 +1,31 @@
-import { Image, Layout } from 'antd';
+import { Divider, Image, Layout } from 'antd';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import IMainLayoutProps from '../interfaces/IMainLayout';
 import './main.layout.scss';
 import logo from '../assets/images/logo.jpg';
-import { APP_NAME } from '../constants';
+import { APP_NAME } from '../app-constants';
+import { useAppDispatch, useAppSelector } from '../redux/hook';
+import { signOut } from '../redux/features/auth/auth.slice';
+import { useEffect } from 'react';
 
 const Sider = Layout.Sider;
 const Header = Layout.Header;
 const Content = Layout.Content;
 
 const MainLayout = ({ children }: IMainLayoutProps) => {
+  const { signInRequired, user, isAdmin } = useAppSelector((state) => state.auth);
   const { pathname: path } = useLocation();
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (navigate) if (signInRequired) navigate('/login');
+
+    return () => {};
+  }, [signInRequired, navigate]);
 
   const handleSignOut = () => {
-    navigate('/login');
+    dispatch(signOut());
   };
 
   return (
@@ -45,11 +56,27 @@ const MainLayout = ({ children }: IMainLayoutProps) => {
               <Link to='/products'>
                 <li className={path === '/products' ? 'active' : ''}>Products</li>
               </Link>
+              <Link to='/clients'>
+                <li style={{ borderTop: '1px solid #3d3d3d' }} className={path === '/clients' ? 'active' : ''}>
+                  Clients
+                </li>
+              </Link>
               <Link to='/orders'>
                 <li className={path === '/orders' ? 'active' : ''}>Orders</li>
               </Link>
+              <Link to='/quotations'>
+                <li className={path === '/quotations' ? 'active' : ''}>Quotations</li>
+              </Link>
+              <Link to='/invoices'>
+                <li className={path === '/invoices' ? 'active' : ''}>Invoices</li>
+              </Link>
             </ul>
             <ul>
+              {isAdmin && (
+                <Link to='/settings'>
+                  <li className={path === '/settings' ? 'active' : ''}>Settings</li>
+                </Link>
+              )}
               <li className='action-danger' onClick={handleSignOut}>
                 Sign Out
               </li>

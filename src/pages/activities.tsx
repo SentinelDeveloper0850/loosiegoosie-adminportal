@@ -3,7 +3,7 @@ import MainLayout from '../layouts/main.layout';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { BASE_URL } from '../constants';
+import { BASE_URL } from '../app-constants';
 import activitiesIcon from '../assets/images/activities.png';
 import { PlusOutlined } from '@ant-design/icons';
 import { formatToMoneyWithCurrency } from '../utils/formatters';

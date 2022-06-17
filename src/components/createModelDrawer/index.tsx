@@ -1,7 +1,7 @@
 import { Button, Col, Drawer, Form, Input, Row, Select, Space } from 'antd';
 import axios from 'axios';
 import { useState } from 'react';
-import { BASE_URL } from '../../constants';
+import { BASE_URL } from '../../app-constants';
 import IProps from './props';
 import './style.scss';
 

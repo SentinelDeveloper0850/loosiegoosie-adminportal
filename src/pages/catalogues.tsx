@@ -3,9 +3,8 @@ import { Button, Divider, List, PageHeader, Space } from 'antd';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { BASE_URL, FORM_CONTROL } from '../constants';
+import { BASE_URL, FORM_CONTROL } from '../app-constants';
 import MainLayout from '../layouts/main.layout';
-import AddBroadcastDrawer from '../components/addBroadcastDrawer';
 import CreateModelDrawer from '../components/createModelDrawer';
 
 const CataloguesPage = () => {

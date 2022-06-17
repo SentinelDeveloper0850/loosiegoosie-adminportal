@@ -2,7 +2,7 @@ import { Button, Divider, List, PageHeader, Image, Space, Col, Form, Table, Tag 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { BASE_URL, MARKUP, VAT } from '../constants';
+import { BASE_URL, MARKUP, VAT } from '../app-constants';
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import { useLocation, useNavigate } from 'react-router-dom';
 import MainLayout from '../layouts/main.layout';

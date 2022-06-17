@@ -1,7 +1,7 @@
 import { Button, Col, DatePicker, Drawer, Form, Input, Row, Space } from 'antd';
 import axios from 'axios';
 import { useState } from 'react';
-import { BASE_URL } from '../../constants';
+import { BASE_URL } from '../../app-constants';
 import IAddEventDrawerProps from '../../interfaces/IAddEventDrawer';
 import './style.scss';
 

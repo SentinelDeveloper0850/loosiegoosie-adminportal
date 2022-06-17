@@ -1,7 +1,7 @@
 import { Button, Drawer, Form, Input, Space } from 'antd';
 import axios from 'axios';
 import { useState } from 'react';
-import { BASE_URL } from '../../constants';
+import { BASE_URL } from '../../app-constants';
 import IAddClassDrawerProps from '../../interfaces/IAddClassDrawer';
 import './style.scss';
 
